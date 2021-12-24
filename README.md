@@ -1,7 +1,2 @@
-# Pluralsight's Unit Testing in Angular Course
-This course is up to date.
-
-To get started, clone the repo or download it
-
-npm install
-npm test
+# Unit Testing in Angular
+This Application is a practice on Angular Unit Testing including also Integration Testing => (Shallow/Deep)
