@@ -37,6 +37,17 @@ describe('HeroesComponent', () => {
       }
       expect(found).toBe(false);
     })
+
+    it('should call deleteHero', () => {
+      // Forcing deleteHero method in our mocking object to return An Observable as we expect in our component
+      mockHeroService.deleteHero.and.returnValue(of(true));
+      component.heroes = HEROES;
+      let neededTobeDeleted: Hero = HEROES[0];
+
+      component.delete(neededTobeDeleted);
+
+      expect(mockHeroService.deleteHero).toHaveBeenCalledWith(neededTobeDeleted);
+    })
   })
 })
 
