@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "test": "ng test"
+    "test": "ng test --source-map=false"
   },
   "keywords": [],
   "author": "",
