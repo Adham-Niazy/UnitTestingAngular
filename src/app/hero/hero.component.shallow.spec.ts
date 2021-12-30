@@ -19,5 +19,14 @@ describe('HeroComponent (Shallow Tests)', () => {
 
     expect(fixture.componentInstance.hero.name).toEqual('AdhamNiazy');
   })
+
+  it('should render the hero name in an anchor tag', () => {
+    // Setting the property manually doesn't mean that this component will feel the change
+    fixture.componentInstance.hero = { id: 1, name: 'AdhamNiazy', strength: 30 };
+    // So I should manually make angular detect the changes
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.querySelector('a').textContent).toContain('AdhamNiazy');
+  })
 })
 
