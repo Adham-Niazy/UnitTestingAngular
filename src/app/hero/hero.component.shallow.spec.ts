@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
 import { HeroComponent } from "./hero.component";
 
 describe('HeroComponent (Shallow Tests)', () => {
@@ -25,8 +26,10 @@ describe('HeroComponent (Shallow Tests)', () => {
     fixture.componentInstance.hero = { id: 1, name: 'AdhamNiazy', strength: 30 };
     // So I should manually make angular detect the changes
     fixture.detectChanges();
+    // This is the same as the one below but those are different approaches
+    expect(fixture.debugElement.query(By.css('a')).nativeElement.textContent).toContain('AdhamNiazy');
 
-    expect(fixture.nativeElement.querySelector('a').textContent).toContain('AdhamNiazy');
+    // expect(fixture.nativeElement.querySelector('a').textContent).toContain('AdhamNiazy');
   })
 })
 
